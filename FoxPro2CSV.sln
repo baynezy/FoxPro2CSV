@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DD2A52B4-827C-45B2-B11A-AFA64457CF5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Converter", "src\Converter\Converter.csproj", "{EC9B6B78-C7A4-44A1-8859-D972BF3D8CBE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Soluiton Items", "Soluiton Items", "{FDFAEC97-8F5E-4F12-8906-ED3E34D74F3B}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		.editorconfig = .editorconfig
+		.gitmessage = .gitmessage
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EC9B6B78-C7A4-44A1-8859-D972BF3D8CBE} = {DD2A52B4-827C-45B2-B11A-AFA64457CF5F}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC9B6B78-C7A4-44A1-8859-D972BF3D8CBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC9B6B78-C7A4-44A1-8859-D972BF3D8CBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC9B6B78-C7A4-44A1-8859-D972BF3D8CBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC9B6B78-C7A4-44A1-8859-D972BF3D8CBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
