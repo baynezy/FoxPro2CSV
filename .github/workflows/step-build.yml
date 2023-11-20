@@ -1,0 +1,46 @@
+on:
+  workflow_call:
+    inputs:
+      version:
+        description: 'The version number to use for the build'
+        required: true
+        type: string
+      checkout-ref:
+        description: 'The commit SHA to checkout'
+        required: true
+        type: string
+  
+jobs:
+  build-app:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Log Branch
+      run: |
+        echo "Branch: ${{ inputs.checkout-ref }}"
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ inputs.checkout-ref }}
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v3.2.0
+      with:
+        dotnet-version: 8.0.x
+    - name: Restore
+      uses: cake-build/cake-action@v1
+      with:
+        target: Restore
+    - name: Build
+      uses: cake-build/cake-action@v1
+      with:
+        target: Build-Only
+        arguments: |
+          versionNumber: ${{inputs.version}}
+    - name: Run tests
+      uses: cake-build/cake-action@v1
+      with:
+        target: Test-Only
+    - name: Publish Unit Test Results
+      if: ${{ github.actor != 'dependabot[bot]' }}
+      uses: EnricoMi/publish-unit-test-result-action/composite@v2
+      with:
+        files: "**/TestResults/*.xml"
