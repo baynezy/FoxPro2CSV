@@ -22,7 +22,7 @@ public class ConverterService(Options options, ILogger<ConverterService> logger)
 
     private void ConvertToCsv(string connectionString, string inputFile, string outputFile)
     {
-        var sqlSelect = $"SELECT * FROM {inputFile}";
+        var sqlSelect = $"SELECT * FROM '{inputFile}'";
 
 #pragma warning disable CA1416
         using var connection = new OleDbConnection(connectionString);
@@ -31,9 +31,10 @@ public class ConverterService(Options options, ILogger<ConverterService> logger)
         var ds = new DataSet();
         da.Fill(ds);
         DataTableToCsv(ds.Tables[0], outputFile);
+        logger.LogInformation("Converted {InputFile} to {OutputFile}", inputFile, outputFile);
     }
 
-    private void DataTableToCsv(DataTable table, string outputFile)
+    private static void DataTableToCsv(DataTable table, string outputFile)
     {
         var sb = new StringBuilder();
         var columnNames = table.Columns.Cast<DataColumn>().Select(column => column.ColumnName).ToArray();
