@@ -1,16 +1,22 @@
-﻿using Microsoft.Extensions.Logging;
-using System.Data;
+﻿using System.Data;
 using System.Data.OleDb;
 using System.Text;
+using Cocona;
+using Microsoft.Extensions.Logging;
 
-namespace Converter;
+namespace Converter.Commands.ConvertDbfToCsv;
 
-public class ConverterService(Options options, ILogger<ConverterService> logger)
+internal class ConvertDbfToCsvCommand(ILogger<ConvertDbfToCsvCommand> logger)
 {
-    public void Convert()
+    public int Convert([Argument] string inputFile)
     {
-        var inputFile = options.InputFile;
         logger.LogInformation("Input file: {InputFile}", inputFile);
+
+        if (InvalidInputFile(inputFile))
+        {
+            logger.LogError("Input file {InputFile} does not exist", inputFile);
+            return -1;
+        }
         
         var connectionString = $"Provider=VFPOLEDB.1;Data Source={inputFile};Collating Sequence=general;";
         var fileName = Path.GetFileNameWithoutExtension(inputFile);
@@ -18,6 +24,13 @@ public class ConverterService(Options options, ILogger<ConverterService> logger)
         logger.LogInformation("Output file: {OutputFile}", outputFile);
         
         ConvertToCsv(connectionString, inputFile, outputFile);
+
+        return 0;
+    }
+
+    private bool InvalidInputFile(string inputFile)
+    {
+        return !File.Exists(inputFile);
     }
 
     private void ConvertToCsv(string connectionString, string inputFile, string outputFile)
