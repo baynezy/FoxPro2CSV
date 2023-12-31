@@ -28,7 +28,7 @@ internal class ConvertDbfToCsvCommand(ILogger<ConvertDbfToCsvCommand> logger)
         return 0;
     }
 
-    private bool InvalidInputFile(string inputFile)
+    private static bool InvalidInputFile(string inputFile)
     {
         return !File.Exists(inputFile);
     }
