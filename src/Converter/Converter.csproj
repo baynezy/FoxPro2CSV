@@ -12,7 +12,7 @@
     <ItemGroup>
       <PackageReference Include="Cocona" Version="2.2.0" />
       <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0" />
-      <PackageReference Include="Spectre.Console" Version="0.48.1-preview.0.5" />
+      <PackageReference Include="Spectre.Console" Version="0.48.1-preview.0.17" />
       <PackageReference Include="System.Data.OleDb" Version="8.0.0" />
       <PackageReference Include="vertical-spectreconsolelogger" Version="0.10.1-dev.20231028.28" />
     </ItemGroup>
