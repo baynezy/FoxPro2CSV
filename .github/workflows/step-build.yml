@@ -22,21 +22,21 @@ jobs:
       with:
         ref: ${{ inputs.checkout-ref }}
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v3.2.0
+      uses: actions/setup-dotnet@v4.0.0
       with:
         dotnet-version: 8.0.x
     - name: Restore
-      uses: cake-build/cake-action@v1
+      uses: cake-build/cake-action@v2
       with:
         target: Restore
     - name: Build
-      uses: cake-build/cake-action@v1
+      uses: cake-build/cake-action@v2
       with:
         target: Build-Only
         arguments: |
           versionNumber: ${{inputs.version}}
     - name: Run tests
-      uses: cake-build/cake-action@v1
+      uses: cake-build/cake-action@v2
       with:
         target: Test-Only
     - name: Publish Unit Test Results
