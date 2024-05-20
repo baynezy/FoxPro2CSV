@@ -24,7 +24,7 @@ jobs:
         run: git checkout -b release/${{ github.event.inputs.major_version }}.${{ github.event.inputs.minor_version }}.${{ github.event.inputs.patch_version }}.${{ github.run_number }}
         
       - name: Update Version Number
-        uses: RadovanPelka/github-action-json@v1.0.1
+        uses: RadovanPelka/github-action-json@v1.0.2
         with:
           path: semver.json
           replaceWith: |
@@ -36,7 +36,7 @@ jobs:
             }
 
       - name: Update changelog
-        uses: thomaseizinger/keep-a-changelog-new-release@2.0.0
+        uses: thomaseizinger/keep-a-changelog-new-release@3.0.0
         with:
           tag: ${{ github.event.inputs.major_version }}.${{ github.event.inputs.minor_version }}.${{ github.event.inputs.patch_version }}.${{ github.run_number }}
 
