@@ -11,3 +11,7 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+# SonarLint plugin configuration
+/sonarlint/
+sonarlint.xml
