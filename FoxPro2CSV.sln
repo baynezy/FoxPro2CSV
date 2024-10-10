@@ -4,12 +4,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DD2A52B4-827
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Converter", "src\Converter\Converter.csproj", "{EC9B6B78-C7A4-44A1-8859-D972BF3D8CBE}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Soluiton Items", "Soluiton Items", "{FDFAEC97-8F5E-4F12-8906-ED3E34D74F3B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FDFAEC97-8F5E-4F12-8906-ED3E34D74F3B}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		.editorconfig = .editorconfig
 		.gitmessage = .gitmessage
 		README.md = README.md
+		build.cake = build.cake
+		CHANGELOG.md = CHANGELOG.md
+		LICENSE.txt = LICENSE.txt
+		semver.json = semver.json
 	EndProjectSection
 EndProject
 Global
