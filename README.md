@@ -27,3 +27,7 @@ git config --local commit.template .gitmessage
 ```pwsh
 dotnet run --project .\src\Converter\Converter.csproj "path-to-foxpro-database.DBF"
 ```
+
+## License
+
+[Apache 2.0](LICENSE.txt)
