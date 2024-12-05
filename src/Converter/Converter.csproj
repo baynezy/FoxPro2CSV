@@ -11,9 +11,10 @@
 
     <ItemGroup>
       <PackageReference Include="Cocona" Version="2.2.0" />
-      <PackageReference Include="Spectre.Console" Version="0.49.1" />
-      <PackageReference Include="System.Data.OleDb" Version="8.0.1" />
-      <PackageReference Include="vertical-spectreconsolelogger" Version="0.10.1-dev.20240326.31" />
+      <PackageReference Include="Spectre.Console" Version="0.49.2-preview.0.69" />
+      <PackageReference Include="System.Data.OleDb" Version="9.0.0" />
+      <PackageReference Include="System.Text.Json" Version="9.0.0" />
+      <PackageReference Include="vertical-spectreconsolelogger" Version="0.10.1-dev.20241119.33" />
     </ItemGroup>
 
 </Project>
