@@ -1,0 +1,497 @@
+﻿{
+  CaseSensitive: false,
+  IsInitialized: true,
+  Columns: [
+    {
+      AllowDBNull: true,
+      AutoIncrement: false,
+      Caption: rpcid,
+      ColumnName: rpcid,
+      DataType: int,
+      DefaultValue: null,
+      Namespace: ,
+      ReadOnly: false,
+      Unique: false,
+      DesignMode: false
+    },
+    {
+      AllowDBNull: true,
+      AutoIncrement: false,
+      Caption: rpcrpdid,
+      ColumnName: rpcrpdid,
+      DataType: int,
+      DefaultValue: null,
+      Namespace: ,
+      Ordinal: 1,
+      ReadOnly: false,
+      Unique: false,
+      DesignMode: false
+    },
+    {
+      AllowDBNull: true,
+      AutoIncrement: false,
+      Caption: rpcprodid,
+      ColumnName: rpcprodid,
+      DefaultValue: null,
+      Namespace: ,
+      Ordinal: 2,
+      ReadOnly: false,
+      Unique: false,
+      DesignMode: false
+    },
+    {
+      AllowDBNull: true,
+      AutoIncrement: false,
+      Caption: rpclabname,
+      ColumnName: rpclabname,
+      DefaultValue: null,
+      Namespace: ,
+      Ordinal: 3,
+      ReadOnly: false,
+      Unique: false,
+      DesignMode: false
+    },
+    {
+      AllowDBNull: true,
+      AutoIncrement: false,
+      Caption: rpcdeleted,
+      ColumnName: rpcdeleted,
+      DataType: bool,
+      DefaultValue: null,
+      Namespace: ,
+      Ordinal: 4,
+      ReadOnly: false,
+      Unique: false,
+      DesignMode: false
+    }
+  ],
+  DataSet: {
+    SchemaSerializationMode: IncludeSchema,
+    CaseSensitive: false,
+    DefaultViewManager: [
+      {}
+    ],
+    EnforceConstraints: true,
+    DataSetName: NewDataSet,
+    HasErrors: false,
+    IsInitialized: true,
+    Locale: en-GB,
+    Tables: [],
+    DesignMode: false
+  },
+  DefaultView: [
+    {
+      RowVersion: Current,
+      Row: {
+        RowError: ,
+        RowState: Unchanged,
+        ItemArray: [
+          1,
+          1048,
+          354,
+                                                            ,
+          false
+        ],
+        HasErrors: false
+      },
+      IsNew: false,
+      IsEdit: false
+    },
+    {
+      RowVersion: Current,
+      Row: {
+        RowError: ,
+        RowState: Unchanged,
+        ItemArray: [
+          2,
+          1214,
+          2Z1,
+                                                            ,
+          false
+        ],
+        HasErrors: false
+      },
+      IsNew: false,
+      IsEdit: false
+    },
+    {
+      RowVersion: Current,
+      Row: {
+        RowError: ,
+        RowState: Unchanged,
+        ItemArray: [
+          3,
+          1043,
+          2NV,
+                                                            ,
+          false
+        ],
+        HasErrors: false
+      },
+      IsNew: false,
+      IsEdit: false
+    },
+    {
+      RowVersion: Current,
+      Row: {
+        RowError: ,
+        RowState: Unchanged,
+        ItemArray: [
+          4,
+          1047,
+          2NU,
+                                                            ,
+          false
+        ],
+        HasErrors: false
+      },
+      IsNew: false,
+      IsEdit: false
+    },
+    {
+      RowVersion: Current,
+      Row: {
+        RowError: ,
+        RowState: Unchanged,
+        ItemArray: [
+          5,
+          1266,
+          2TD,
+                                                            ,
+          false
+        ],
+        HasErrors: false
+      },
+      IsNew: false,
+      IsEdit: false
+    },
+    {
+      RowVersion: Current,
+      Row: {
+        RowError: ,
+        RowState: Unchanged,
+        ItemArray: [
+          6,
+          1267,
+          4H1,
+                                                            ,
+          false
+        ],
+        HasErrors: false
+      },
+      IsNew: false,
+      IsEdit: false
+    },
+    {
+      RowVersion: Current,
+      Row: {
+        RowError: ,
+        RowState: Unchanged,
+        ItemArray: [
+          7,
+          1283,
+          4WI,
+                                                            ,
+          false
+        ],
+        HasErrors: false
+      },
+      IsNew: false,
+      IsEdit: false
+    },
+    {
+      RowVersion: Current,
+      Row: {
+        RowError: ,
+        RowState: Unchanged,
+        ItemArray: [
+          8,
+          45,
+             ,
+                                                            ,
+          true
+        ],
+        HasErrors: false
+      },
+      IsNew: false,
+      IsEdit: false
+    },
+    {
+      RowVersion: Current,
+      Row: {
+        RowError: ,
+        RowState: Unchanged,
+        ItemArray: [
+          9,
+          1302,
+          4XA,
+                                                            ,
+          false
+        ],
+        HasErrors: false
+      },
+      IsNew: false,
+      IsEdit: false
+    },
+    {
+      RowVersion: Current,
+      Row: {
+        RowError: ,
+        RowState: Unchanged,
+        ItemArray: [
+          10,
+          1325,
+             ,
+                                                            ,
+          true
+        ],
+        HasErrors: false
+      },
+      IsNew: false,
+      IsEdit: false
+    },
+    {
+      RowVersion: Current,
+      Row: {
+        RowError: ,
+        RowState: Unchanged,
+        ItemArray: [
+          11,
+          1326,
+             ,
+                                                            ,
+          true
+        ],
+        HasErrors: false
+      },
+      IsNew: false,
+      IsEdit: false
+    },
+    {
+      RowVersion: Current,
+      Row: {
+        RowError: ,
+        RowState: Unchanged,
+        ItemArray: [
+          12,
+          1333,
+          355,
+                                                            ,
+          false
+        ],
+        HasErrors: false
+      },
+      IsNew: false,
+      IsEdit: false
+    },
+    {
+      RowVersion: Current,
+      Row: {
+        RowError: ,
+        RowState: Unchanged,
+        ItemArray: [
+          13,
+          1363,
+          2OV,
+                                                            ,
+          false
+        ],
+        HasErrors: false
+      },
+      IsNew: false,
+      IsEdit: false
+    },
+    {
+      RowVersion: Current,
+      Row: {
+        RowError: ,
+        RowState: Unchanged,
+        ItemArray: [
+          14,
+          1370,
+          41A,
+                                                            ,
+          false
+        ],
+        HasErrors: false
+      },
+      IsNew: false,
+      IsEdit: false
+    }
+  ],
+  HasErrors: false,
+  Locale: en-GB,
+  Rows: [
+    {
+      RowError: ,
+      RowState: Unchanged,
+      ItemArray: [
+        1,
+        1048,
+        354,
+                                                          ,
+        false
+      ],
+      HasErrors: false
+    },
+    {
+      RowError: ,
+      RowState: Unchanged,
+      ItemArray: [
+        2,
+        1214,
+        2Z1,
+                                                          ,
+        false
+      ],
+      HasErrors: false
+    },
+    {
+      RowError: ,
+      RowState: Unchanged,
+      ItemArray: [
+        3,
+        1043,
+        2NV,
+                                                          ,
+        false
+      ],
+      HasErrors: false
+    },
+    {
+      RowError: ,
+      RowState: Unchanged,
+      ItemArray: [
+        4,
+        1047,
+        2NU,
+                                                          ,
+        false
+      ],
+      HasErrors: false
+    },
+    {
+      RowError: ,
+      RowState: Unchanged,
+      ItemArray: [
+        5,
+        1266,
+        2TD,
+                                                          ,
+        false
+      ],
+      HasErrors: false
+    },
+    {
+      RowError: ,
+      RowState: Unchanged,
+      ItemArray: [
+        6,
+        1267,
+        4H1,
+                                                          ,
+        false
+      ],
+      HasErrors: false
+    },
+    {
+      RowError: ,
+      RowState: Unchanged,
+      ItemArray: [
+        7,
+        1283,
+        4WI,
+                                                          ,
+        false
+      ],
+      HasErrors: false
+    },
+    {
+      RowError: ,
+      RowState: Unchanged,
+      ItemArray: [
+        8,
+        45,
+           ,
+                                                          ,
+        true
+      ],
+      HasErrors: false
+    },
+    {
+      RowError: ,
+      RowState: Unchanged,
+      ItemArray: [
+        9,
+        1302,
+        4XA,
+                                                          ,
+        false
+      ],
+      HasErrors: false
+    },
+    {
+      RowError: ,
+      RowState: Unchanged,
+      ItemArray: [
+        10,
+        1325,
+           ,
+                                                          ,
+        true
+      ],
+      HasErrors: false
+    },
+    {
+      RowError: ,
+      RowState: Unchanged,
+      ItemArray: [
+        11,
+        1326,
+           ,
+                                                          ,
+        true
+      ],
+      HasErrors: false
+    },
+    {
+      RowError: ,
+      RowState: Unchanged,
+      ItemArray: [
+        12,
+        1333,
+        355,
+                                                          ,
+        false
+      ],
+      HasErrors: false
+    },
+    {
+      RowError: ,
+      RowState: Unchanged,
+      ItemArray: [
+        13,
+        1363,
+        2OV,
+                                                          ,
+        false
+      ],
+      HasErrors: false
+    },
+    {
+      RowError: ,
+      RowState: Unchanged,
+      ItemArray: [
+        14,
+        1370,
+        41A,
+                                                          ,
+        false
+      ],
+      HasErrors: false
+    }
+  ],
+  TableName: Table,
+  Namespace: ,
+  DesignMode: false
+}

@@ -12,6 +12,9 @@ updates:
     labels:
       - "dependencies"
     open-pull-requests-limit: 10
+    ignore:
+      - dependency-name: "FluentAssertions"
+        versions: ["8.*"]
       
   - package-ecosystem: "github-actions"
     directory: "/" # Location of package manifests
