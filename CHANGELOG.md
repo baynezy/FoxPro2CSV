@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Refactored to have tests
+- Added option to change the text delimiter for output CSV
+
 ## [1.0.1.5] - 2024-12-05
 
 ## [1.0.0.4] - 2024-10-10

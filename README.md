@@ -28,6 +28,14 @@ git config --local commit.template .gitmessage
 dotnet run --project .\src\Converter\Converter.csproj "path-to-foxpro-database.DBF"
 ```
 
+##### Optional Parameters
+
+| Parameter       | Short Code | Description                                                |
+|-----------------|------------|------------------------------------------------------------|
+| --textDelimiter | -d         | The text delimiter to use for the CSV file. Default is `"` |
+
+```pwsh
+
 ## License
 
 [Apache 2.0](LICENSE.txt)

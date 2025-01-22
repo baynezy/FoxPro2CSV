@@ -12,7 +12,7 @@ on:
   
 jobs:
   build-app:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - name: Log Branch
       run: |
@@ -22,9 +22,10 @@ jobs:
       with:
         ref: ${{ inputs.checkout-ref }}
     - name: Setup .NET Core
-      uses: actions/setup-dotnet@v4.2.0
-      with:
-        dotnet-version: 8.0.x
+      run: |
+        Invoke-WebRequest -Uri https://dot.net/v1/dotnet-install.ps1 -OutFile dotnet-install.ps1
+        .\dotnet-install.ps1 -Version 8.0.405 -Architecture x86
+      shell: pwsh
     - name: Restore
       uses: cake-build/cake-action@v2
       with:
@@ -39,6 +40,8 @@ jobs:
       uses: cake-build/cake-action@v2
       with:
         target: Test-Only
+        arguments: |
+          testFilter: Category!=LocalTest
     - name: Publish Unit Test Results
       if: ${{ github.actor != 'dependabot[bot]' }}
       uses: EnricoMi/publish-unit-test-result-action/composite@v2

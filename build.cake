@@ -1,6 +1,7 @@
 var target = Argument("target", "Test");
 var configuration = Argument("configuration", "Release");
 var versionNumber = Argument("versionNumber", "0.1.0");
+var testFilter = Argument("testFilter", "");
 var solutionFolder = "./";
 
 Task("Clean")
@@ -40,14 +41,20 @@ Task("Test")
 Task("Test-Only")
 	.Does(() =>
 	{
-		// Run tests
-		DotNetTest(solutionFolder, new DotNetTestSettings
-		{
-			NoRestore = true,
+	    var settings = new DotNetTestSettings
+        {
+            NoRestore = true,
             NoBuild = true,
-			Configuration = configuration,
+            Configuration = configuration,
             Loggers = new string[] { "junit;LogFileName=results.xml" }
-		});
+        };
+        
+        if (!string.IsNullOrEmpty(testFilter))
+        {
+            settings.Filter = testFilter;
+        }
+		// Run tests
+		DotNetTest(solutionFolder, settings);
 	});
 
 RunTarget(target);

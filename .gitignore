@@ -93,3 +93,6 @@ fabric.properties
 
 # custom
 *.csv
+
+# Verify
+*.received.txt
