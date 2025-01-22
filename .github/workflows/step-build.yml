@@ -44,6 +44,6 @@ jobs:
           testFilter: Category!=LocalTest
     - name: Publish Unit Test Results
       if: ${{ github.actor != 'dependabot[bot]' }}
-      uses: EnricoMi/publish-unit-test-result-action/composite@v2
+      uses: EnricoMi/publish-unit-test-result-action/windows@v2
       with:
         files: "**/TestResults/*.xml"
