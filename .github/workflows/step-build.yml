@@ -27,17 +27,17 @@ jobs:
         .\dotnet-install.ps1 -Version 8.0.405 -Architecture x86
       shell: pwsh
     - name: Restore
-      uses: cake-build/cake-action@v2
+      uses: cake-build/cake-action@v3
       with:
         target: Restore
     - name: Build
-      uses: cake-build/cake-action@v2
+      uses: cake-build/cake-action@v3
       with:
         target: Build-Only
         arguments: |
           versionNumber: ${{inputs.version}}
     - name: Run tests
-      uses: cake-build/cake-action@v2
+      uses: cake-build/cake-action@v3
       with:
         target: Test-Only
         arguments: |
