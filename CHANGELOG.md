@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Refactored to have tests
 - Added option to change the text delimiter for output CSV
+- Clean up Readme mistakes
+- Remove accidentally committed files from repo
 
 ## [1.0.1.5] - 2024-12-05
 

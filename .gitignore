@@ -96,3 +96,6 @@ fabric.properties
 
 # Verify
 *.received.txt
+
+# Settings
+*.DotSettings.user
