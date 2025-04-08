@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -10,7 +10,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Spectre.Console" Version="0.49.2-preview.0.76" />
+      <PackageReference Include="Spectre.Console" Version="0.50.0" />
       <PackageReference Include="vertical-spectreconsolelogger" Version="0.10.1-dev.20241119.33" />
     </ItemGroup>
 
