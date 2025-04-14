@@ -10,7 +10,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Bogus" Version="35.6.2"/>
+        <PackageReference Include="Bogus" Version="35.6.3"/>
         <PackageReference Include="FluentAssertions" Version="[7.1.0,8)"/>
         <PackageReference Include="JunitXml.TestLogger" Version="6.1.0"/>
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.13.0"/>
