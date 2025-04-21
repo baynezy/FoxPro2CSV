@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0.6] - 2025-04-21
+
 ### Added
 
 - Refactored to have tests
@@ -24,7 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.0.1] - 2023-11-20
 
-[unreleased]: https://github.com/baynezy/FoxPro2CSV/compare/1.0.1.5...HEAD
+[unreleased]: https://github.com/baynezy/FoxPro2CSV/compare/1.1.0.6...HEAD
+[1.1.0.6]: https://github.com/baynezy/FoxPro2CSV/compare/1.0.1.5...1.1.0.6
 [1.0.1.5]: https://github.com/baynezy/FoxPro2CSV/compare/1.0.0.4...1.0.1.5
 [1.0.0.4]: https://github.com/baynezy/FoxPro2CSV/compare/0.2.1.3...1.0.0.4
 [0.2.1.3]: https://github.com/baynezy/FoxPro2CSV/compare/0.2.0.2...0.2.1.3
