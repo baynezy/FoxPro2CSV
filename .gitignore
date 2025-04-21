@@ -93,3 +93,12 @@ fabric.properties
 
 # custom
 *.csv
+
+# Verify
+*.received.txt
+
+# Settings
+*.DotSettings.user
+
+# Test Results
+TestResults/

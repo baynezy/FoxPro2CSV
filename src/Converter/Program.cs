@@ -1,5 +1,6 @@
 ﻿using Cocona;
 using Converter.Commands.ConvertDbfToCsv;
+using Converter.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Vertical.SpectreLogger;
@@ -16,34 +17,31 @@ builder.Logging.AddSpectreConsole(config =>
     const string errorTemplate      = "[[{DateTime:T} [red bold]Error[/]]] {Message}{NewLine}{Exception}";
     const string criticalTemplate   = "[[{DateTime:T} [red bold]Critical[/]]] {Message}{NewLine}{Exception}";
                     
-    config.ConfigureProfiles(new[]
-    {
+    config.ConfigureProfiles([
         LogLevel.Information
-    }, profile => profile.OutputTemplate = infoTemplate);
-    config.ConfigureProfiles(new[]
-    {
+    ], profile => profile.OutputTemplate = infoTemplate);
+    config.ConfigureProfiles([
         LogLevel.Error
-    }, profile => profile.OutputTemplate = errorTemplate);
-    config.ConfigureProfiles(new[]
-    {
+    ], profile => profile.OutputTemplate = errorTemplate);
+    config.ConfigureProfiles([
         LogLevel.Critical
-    }, profile => profile.OutputTemplate = criticalTemplate);
-    config.ConfigureProfiles(new []
-    {
+    ], profile => profile.OutputTemplate = criticalTemplate);
+    config.ConfigureProfiles([
         LogLevel.Debug,
         LogLevel.Trace,
         LogLevel.Warning
-    },profile => profile.OutputTemplate = generalTemplate);
+    ],profile => profile.OutputTemplate = generalTemplate);
 });
 
 builder.Services.AddSingleton<ConvertDbfToCsvCommand>();
+builder.Services.AddTransient<IFileService, FileService>();
 
 var app = builder.Build();
 
-Console.WriteLine("Visual FoxPro 2 CSV Converter v1.0.0");
+Console.WriteLine("Visual FoxPro 2 CSV Converter v1.1.5");
 Console.WriteLine("=====================================");
 Console.WriteLine();
 
 app.AddCommands<ConvertDbfToCsvCommand>();
 
-app.Run();
+await app.RunAsync();

@@ -1,21 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <OutputType>Exe</OutputType>
         <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <!-- The FoxPro driver requires this run on 32-bit -->
         <PlatformTarget>x86</PlatformTarget>
     </PropertyGroup>
-
+    
     <ItemGroup>
-      <PackageReference Include="Spectre.Console" Version="0.50.0" />
-      <PackageReference Include="vertical-spectreconsolelogger" Version="0.10.1-dev.20241119.33" />
+        <PackageReference Include="Cocona" Version="2.2.0" />
+        <PackageReference Include="System.Data.OleDb" Version="9.0.4" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Converter.Core\Converter.Core.csproj" />
+        <InternalsVisibleTo Include="Converter" />
+        <InternalsVisibleTo Include="Converter.Core.UnitTests" />
+        <!-- This is needed for NSubstitute to work -->
+        <InternalsVisibleTo Include="DynamicProxyGenAssembly2" />
     </ItemGroup>
 
 </Project>
