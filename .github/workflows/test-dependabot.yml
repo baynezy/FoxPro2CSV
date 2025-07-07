@@ -12,7 +12,7 @@ env:
 
 jobs:
   get-version:
-    if: ${{ github.actor == 'dependabot[bot]' }}
+    if: ${{ github.actor == 'dependabot[bot]' || github.event_name == 'workflow_dispatch' }}
     uses: ./.github/workflows/step-version.yml
 
   build:

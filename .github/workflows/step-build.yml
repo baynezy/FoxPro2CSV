@@ -24,7 +24,14 @@ jobs:
     - name: Setup .NET Core
       run: |
         Invoke-WebRequest -Uri https://dot.net/v1/dotnet-install.ps1 -OutFile dotnet-install.ps1
-        .\dotnet-install.ps1 -Version 8.0.405 -Architecture x86
+        .\dotnet-install.ps1 -Version 8.0.405 -Architecture x86 -InstallDir $PWD\.dotnet
+      shell: pwsh
+    
+    - name: Set up .NET environment variables
+      run: |
+        echo "DOTNET_ROOT=$PWD\.dotnet" >> $env:GITHUB_ENV
+        echo "DOTNET_ROOT(x86)=$PWD\.dotnet" >> $env:GITHUB_ENV
+        echo "$PWD\.dotnet" >> $env:GITHUB_PATH
       shell: pwsh
     - name: Restore
       uses: cake-build/cake-action@v3
