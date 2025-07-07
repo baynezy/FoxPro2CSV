@@ -5,6 +5,9 @@ on:
     branches: [ develop ]
     types: [closed]
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   update-merged-issue-issues:
     if: github.event.pull_request.merged_by != '' && github.actor != 'dependabot[bot]' && startsWith(github.head_ref, 'feature/issue-')

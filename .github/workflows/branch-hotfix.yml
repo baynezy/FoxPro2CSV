@@ -7,6 +7,9 @@ on:
       - master
   workflow_dispatch:
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   get-version:
     if: startsWith(github.head_ref, 'hotfix/')

@@ -4,6 +4,9 @@ on:
     types:
       - opened
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   update-new-issues:
     runs-on: ubuntu-latest

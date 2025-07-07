@@ -5,6 +5,9 @@ on:
     branches:
     - feature/issue-*
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   update-in-progress-issues:
     runs-on: ubuntu-latest

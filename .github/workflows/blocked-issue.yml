@@ -10,6 +10,9 @@ on:
       - created
       - edited
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   add-blocked-label:
     runs-on: ubuntu-latest
