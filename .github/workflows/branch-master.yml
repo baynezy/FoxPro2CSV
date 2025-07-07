@@ -6,6 +6,9 @@ on:
       - master
   workflow_dispatch:
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   get-version:
     uses: ./.github/workflows/step-version.yml

@@ -6,6 +6,9 @@ on:
       - ".github/workflows/label-configurer.yml"
       - ".github/labels.yml"
 
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 jobs:
   labeler:
     runs-on: ubuntu-latest
