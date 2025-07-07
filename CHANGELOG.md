@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added `GITHUB_TOKEN` environment variable to all GitHub Actions workflows to prevent rate limiting issues with the GitHub API (#129)
 
+### Updated
+
+- Changed from 3rd party action for managing application versioning to one maintained by me (#131)
+
 ## [1.1.0.6] - 2025-04-21
 
 ### Added
