@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Updated
 
 - Changed from 3rd party action for managing application versioning to one maintained by me (#131)
+- Changed from 3rd party action for managing repository changelog to one maintained by me (#132)
 
 ## [1.1.0.6] - 2025-04-21
 
