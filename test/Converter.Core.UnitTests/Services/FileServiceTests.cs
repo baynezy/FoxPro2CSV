@@ -6,12 +6,13 @@ namespace Converter.Core.UnitTests.Services;
 public class FileServiceTests
 {
     private readonly FileService _sut = new();
-    
+
     private const string NonExistentFile = "non-existent-file.dbf";
     private readonly string _fileThatExists = $"{TestPath()}file-that-exists.dbf";
+
     // ReSharper disable once StringLiteralTypo
     private readonly string _validFileToParse = $"{TestPath()}rcppdrnd.DBF";
-    
+
     [Fact]
     public void InvalidInputFile_WhenFileDoesNotExist_ReturnsTrue()
     {
@@ -22,7 +23,7 @@ public class FileServiceTests
         result.Should()
             .BeTrue();
     }
-    
+
     [Fact]
     public void InvalidInputFile_WhenFileExists_ReturnsFalse()
     {
@@ -33,7 +34,7 @@ public class FileServiceTests
         result.Should()
             .BeFalse();
     }
-    
+
     [Fact]
     public void CreateConnectionString_ReturnsExpectedValue()
     {
@@ -48,12 +49,13 @@ public class FileServiceTests
         result.Should()
             .Be(expected);
     }
-    
+
     [Fact]
     public void CreateConnectionString_WhenInputFileIsRelativePath_ReturnsConnectionStringWithFullPath()
     {
         // arrange
-        var expected = $"Provider=VFPOLEDB.1;Data Source={Path.GetFullPath(_validFileToParse)};Collating Sequence=general;";
+        var expected =
+            $"Provider=VFPOLEDB.1;Data Source={Path.GetFullPath(_validFileToParse)};Collating Sequence=general;";
 
         // act
         var result = _sut.CreateConnectionString(_validFileToParse);
@@ -62,7 +64,7 @@ public class FileServiceTests
         result.Should()
             .Be(expected);
     }
-    
+
     [Fact]
     public void ConstructOutputFileName_ReturnsExpectedValue()
     {
@@ -77,7 +79,7 @@ public class FileServiceTests
         result.Should()
             .Be(expected);
     }
-    
+
     [Fact]
     [LocalTest]
     public void DbfFileToDataTable_WhenLoadingFile_ThenReturnsDataTable()
@@ -89,7 +91,7 @@ public class FileServiceTests
         result.Should()
             .NotBeNull();
     }
-    
+
     [Fact]
     [LocalTest]
     public void DbfFileToDataTable_WhenLoadingFile_ThenReturnsDataTableWithRows()
@@ -98,10 +100,11 @@ public class FileServiceTests
         var result = _sut.DbfFileToDataTable(_validFileToParse);
 
         // assert
-        result.Rows.Should()
+        result.Rows.Cast<object>()
+            .Should()
             .NotBeEmpty();
     }
-    
+
     [Fact]
     [LocalTest]
     public void DbfFileToDataTable_WhenLoadingFile_ThenReturnsDataTableWithColumns()
@@ -110,10 +113,11 @@ public class FileServiceTests
         var result = _sut.DbfFileToDataTable(_validFileToParse);
 
         // assert
-        result.Columns.Should()
+        result.Columns.Cast<object>()
+            .Should()
             .NotBeEmpty();
     }
-    
+
     [Fact]
     [LocalTest]
     public Task DbfFileToDataTable_WhenLoadingFile_ThenShouldBeDeterministic()
@@ -123,18 +127,27 @@ public class FileServiceTests
         var result2 = _sut.DbfFileToDataTable(_validFileToParse);
 
         // assert
-        result1.Should()
-            .BeEquivalentTo(result2);
+        result1.Rows.Count.Should()
+            .Be(result2.Rows.Count);
+        result1.Columns.Count.Should()
+            .Be(result2.Columns.Count);
+
+        for (var i = 0; i < result1.Rows.Count; i++)
+        {
+            result1.Rows[i]
+                .ItemArray.Should()
+                .BeEquivalentTo(result2.Rows[i].ItemArray);
+        }
 
         return Verify(result1);
     }
-    
+
     [Fact]
     [LocalTest]
     public void DataTableToString_WhenCalledWithTextDelimiter_ThenShouldReturnPopulatedString()
     {
         // arrange
-        var dataTable =  _sut.DbfFileToDataTable(_validFileToParse);
+        var dataTable = _sut.DbfFileToDataTable(_validFileToParse);
 
         // act
         var result1 = _sut.DataTableToString(dataTable, "%%%");
@@ -144,13 +157,13 @@ public class FileServiceTests
         result1.Should()
             .NotBeEquivalentTo(result2);
     }
-    
+
     [Fact]
     [LocalTest]
     public Task DataTableToString_WhenCalledWithTextDelimiter_ThenShouldBeDeterministic()
     {
         // arrange
-        var dataTable =  _sut.DbfFileToDataTable(_validFileToParse);
+        var dataTable = _sut.DbfFileToDataTable(_validFileToParse);
 
         // act
         var result1 = _sut.DataTableToString(dataTable, "%%%");
@@ -162,13 +175,13 @@ public class FileServiceTests
 
         return Verify(result1);
     }
-    
+
     [Fact]
     [LocalTest]
     public void DataTableToString_WhenCalled_ThenShouldReturnPopulatedString()
     {
         // arrange
-        var dataTable =  _sut.DbfFileToDataTable(_validFileToParse);
+        var dataTable = _sut.DbfFileToDataTable(_validFileToParse);
 
         // act
         var result = _sut.DataTableToString(dataTable, "\"");
@@ -177,13 +190,13 @@ public class FileServiceTests
         result.Should()
             .NotBeNullOrEmpty();
     }
-    
+
     [LocalTest]
     [Fact]
     public Task DataTableToString_WhenCalled_ThenShouldBeDeterministic()
     {
         // arrange
-        var dataTable =  _sut.DbfFileToDataTable(_validFileToParse);
+        var dataTable = _sut.DbfFileToDataTable(_validFileToParse);
 
         // act
         var result1 = _sut.DataTableToString(dataTable, "\"");
@@ -192,10 +205,10 @@ public class FileServiceTests
         // assert
         result1.Should()
             .Be(result2);
-        
+
         return Verify(result1);
     }
-    
+
     private static string TestPath()
     {
         const string route = @"..\..\..\TestFiles\";
