@@ -44,7 +44,7 @@ jobs:
           patch-version: ${{ steps.increment_version.outputs.patch_version }}
           build-version: ${{ github.run_number }}
       - name: Update changelog
-        uses: baynezy/ChangeLogger.Action@1.1.1.13
+        uses: baynezy/ChangeLogger.Action@1.2.0.6
         with:
           tag: ${{ needs.get-version.outputs.major }}.${{ needs.get-version.outputs.minor }}.${{ steps.increment_version.outputs.patch_version }}.${{ github.run_number }}
       - name: Commit Changes
