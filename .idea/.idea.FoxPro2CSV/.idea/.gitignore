@@ -15,3 +15,6 @@
 # SonarLint plugin configuration
 /sonarlint/
 sonarlint.xml
+
+# AWS Toolkit for JetBrains ignored files
+awsToolkit.xml
