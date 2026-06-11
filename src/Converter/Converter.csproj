@@ -10,7 +10,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Spectre.Console" Version="0.55.2" />
+      <PackageReference Include="Spectre.Console" Version="0.57.0" />
       <PackageReference Include="vertical-spectreconsolelogger" Version="0.10.1-dev.20241201.35" />
     </ItemGroup>
 
