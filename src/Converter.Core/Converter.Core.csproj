@@ -10,7 +10,7 @@
     
     <ItemGroup>
         <PackageReference Include="Cocona" Version="2.2.0" />
-        <PackageReference Include="System.Data.OleDb" Version="10.0.10" />
+        <PackageReference Include="System.Data.OleDb" Version="10.0.12" />
     </ItemGroup>
 
     <ItemGroup>
