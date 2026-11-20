@@ -34,17 +34,17 @@ jobs:
         echo "$PWD\.dotnet" >> $env:GITHUB_PATH
       shell: pwsh
     - name: Restore
-      uses: cake-build/cake-action@v3
+      uses: cake-build/cake-action@v4
       with:
         target: Restore
     - name: Build
-      uses: cake-build/cake-action@v3
+      uses: cake-build/cake-action@v4
       with:
         target: Build-Only
         arguments: |
           versionNumber: ${{inputs.version}}
     - name: Run tests
-      uses: cake-build/cake-action@v3
+      uses: cake-build/cake-action@v4
       with:
         target: Test-Only
         arguments: |
